@@ -4,11 +4,11 @@ Perlin Noise implementation in CPP
 
 Tutorial Video Link: https://youtu.be/kCIaHqb60Cw?si=ci5PX04gFqfMkOvz
 
-Generates a PGM file.
-Uses ImageMagick to convert PGM files to PNG images.
+- Generates a PGM file.
+- Uses ImageMagick to convert PGM files to PNG images.
 
-Plan to implement octaves.
-Plan to accelerate using CUDA.
+- Plan to implement octaves.
+- Plan to accelerate using CUDA.
 
 ## How to run
 
