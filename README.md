@@ -12,7 +12,7 @@ Plan to accelerate using CUDA.
 
 ## How to run
 
-# Linux
+### Linux
 
 Install imagemagick for PGM -> PNG conversions
 ```bash
@@ -31,4 +31,20 @@ Convert the PGM image to PNG
 convert perlin.pgm perlin.png
 ```
 
-# Windows
+### Windows
+
+Install ImageMagick for PGM -> PNG conversions
+```powershell
+winget install ImageMagick.ImageMagick
+```
+
+Compile and Run the file
+```powershell
+g++ perlin.cpp -o perlin.exe 
+.\perlin.exe
+```
+
+Convert the PGM image to PNG
+```powershell
+magick perlin.pgm perlin.png
+```
