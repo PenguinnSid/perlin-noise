@@ -109,8 +109,22 @@ int main(){
     for(int y = 0;y<height;y++){
         for(int x = 0;x<width;x++){
 
-            // calculate perlin val
-            float val = perlin(x*scale,y*scale);
+            // initialize values
+            float val = 0.0f;
+            float freq = 1.0f;
+            float amp = 1.0f;
+
+            for(int octave = 0;octave < 12;octave++){
+                
+                // calculate perlin noise
+                val+=perlin(x*scale*freq,y*scale*freq)*amp;
+
+                // frequency doubled and amplitude halved for each octave
+                freq*=2.0f;
+                amp*=0.5f;
+
+            }
+
             // normalize value from [-1,1] to [0,255]
             int pixel = (int)((val + 1.0f) * 0.5f * 255.0f);
 
