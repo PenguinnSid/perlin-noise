@@ -10,6 +10,12 @@ Tutorial Video Link: https://youtu.be/kCIaHqb60Cw?si=ci5PX04gFqfMkOvz
 - Plan to implement octaves.
 - Plan to accelerate using CUDA.
 
+## Images
+
+| Without Octaves | With 12 Octaves |
+|:---:|:---:|
+| ![Without Octaves](perlin_without_octaves.png) | ![With 12 Octaves](perlin_with_12_octaves.png) |
+
 ## How to run
 
 ### Linux
