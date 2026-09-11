@@ -113,17 +113,23 @@ int main(){
             float val = 0.0f;
             float freq = 1.0f;
             float amp = 1.0f;
+            float maxAmp = 0.0f;
 
             for(int octave = 0;octave < 12;octave++){
                 
                 // calculate perlin noise
                 val+=perlin(x*scale*freq,y*scale*freq)*amp;
+                // clipping 
+                maxAmp+=amp; 
 
                 // frequency doubled and amplitude halved for each octave
                 freq*=2.0f;
                 amp*=0.5f;
 
             }
+
+            // normalizes values to the range [-1,1]
+            val/= maxAmp;
 
             // normalize value from [-1,1] to [0,255]
             int pixel = (int)((val + 1.0f) * 0.5f * 255.0f);
