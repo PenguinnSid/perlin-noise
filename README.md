@@ -16,15 +16,15 @@ Tutorial Video Link: https://youtu.be/kCIaHqb60Cw?si=ci5PX04gFqfMkOvz
 | ![Without Octaves](perlin_without_octaves.png) | ![With 12 Octaves](perlin_with_12_octaves.png) |
 
 ## Hardware used: 
-CPU: Intel Core Ultra 7 265k
-GPU: Nvidia RTX 5070 Ti
+- CPU: Intel Core Ultra 7 265k
+- GPU: Nvidia RTX 5070 Ti
 
 ## Execution Times
 
-CPU Execution Time: 2135.2 ms
-GPU Kernel Execution Time: 0.495488 ms
+- CPU Execution Time: 2135.2 ms
+- GPU Kernel Execution Time: 0.495488 ms
 
-Speedup: ~4310×
+- Speedup: ~4310×
 
 ## How to run
 
