@@ -6,9 +6,8 @@ Tutorial Video Link: https://youtu.be/kCIaHqb60Cw?si=ci5PX04gFqfMkOvz
 
 - Generates a PGM file.
 - Uses ImageMagick to convert PGM files to PNG images.
-
-- Plan to implement octaves.
-- Plan to accelerate using CUDA.
+- Generates maps with 12 octaves.
+- Implemented a CUDA version for the GPU.
 
 ## Images
 
@@ -16,9 +15,18 @@ Tutorial Video Link: https://youtu.be/kCIaHqb60Cw?si=ci5PX04gFqfMkOvz
 |:---:|:---:|
 | ![Without Octaves](perlin_without_octaves.png) | ![With 12 Octaves](perlin_with_12_octaves.png) |
 
-## How to run
+## Hardware used: 
+CPU: Intel Core Ultra 7 265k
+GPU: Nvidia RTX 5070 Ti
 
-### Linux
+## Execution Times
+
+CPU Execution Time: 2135.2 ms
+GPU Kernel Execution Time: 0.495488 ms
+
+Speedup: ~4310×
+
+## How to run
 
 Install imagemagick for PGM -> PNG conversions
 ```bash
@@ -37,20 +45,14 @@ Convert the PGM image to PNG
 convert perlin.pgm perlin.png
 ```
 
-### Windows
-
-Install ImageMagick for PGM -> PNG conversions
-```powershell
-winget install ImageMagick.ImageMagick
-```
-
-Compile and Run the file
-```powershell
-g++ perlin.cpp -o perlin.exe 
-.\perlin.exe
+Run the CUDA File
+```bash
+nvcc perlin_cuda.cu -o perlin_cuda
+./perlin_cuda
 ```
 
 Convert the PGM image to PNG
-```powershell
-magick perlin.pgm perlin.png
+```bash
+convert perlin_cuda.pgm perlin_cuda.png
 ```
+
