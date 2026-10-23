@@ -1,6 +1,7 @@
 #include <math.h>
 #include <fstream>
 #include <iostream>
+#include <chrono>
 //#include <stb_image_write.h>
 
 using namespace std;
@@ -106,6 +107,8 @@ int main(){
     // sampling scale (determines the grid)
     float scale = 0.02f;
 
+    auto start = chrono::high_resolution_clock::now();
+
     for(int y = 0;y<height;y++){
         for(int x = 0;x<width;x++){
 
@@ -138,6 +141,13 @@ int main(){
         }
         image<<"\n";
     }
+
+    auto stop = chrono::high_resolution_clock::now();
+
+    auto duration = chrono::duration<double, milli>(stop - start).count();
+
+    cout << "CPU Execution Time: " << duration << " ms\n";
+
     image.close();
 
     return 0;
